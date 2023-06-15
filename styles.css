@@ -257,3 +257,25 @@ html, body{
         40% { -webkit-opacity: 0.3; opacity: 0.3;  }
         90%,100% { -webkit-opacity: 1; opacity: 1; -webkit-transform: scale(1.2); transform: scale(1.2); border-radius: 999999px;}
     }
+
+    @media only screen and (max-width: 600px){
+        .navigation-links{
+            display: none;
+        }
+        
+        .custom-navigation{
+            text-align: center;
+        }
+        
+        .brand img{
+            width: 120px;
+        }
+        
+        .astronaut-container{
+            top: 70%;
+        }
+        
+        .center_container{
+            padding-top: 25%;
+        }
+    }
