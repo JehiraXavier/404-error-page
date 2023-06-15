@@ -99,7 +99,7 @@ html, body{
 }
 
 .demo a:hover {
-    color: #fbfbfb;
+    color: #000000;
     font-weight: bold;
 }
 .request-button{
@@ -153,7 +153,7 @@ html, body{
     
     .home-button:hover{
         background-color: #FFCB39;
-        color: #fff;
+        color: #000000;
         font-weight: bold;
         transform: scale(1.05);
         box-shadow: 0px 20px 20px rgba(0,0,0,0.1);
@@ -170,25 +170,26 @@ html, body{
         transform: translateX(-50px);
         top: 75%;
         pointer-events: none;
-        animation: rocket-movement 200s linear infinite both running;
+        animation: rocket-path 200s linear infinite both running;
     }
+
+    @keyframes rocket-path { 100% {transform: translate(1200px,-600px);} }
     
     .earth{
         position: absolute;
         top: 20%;
         left: 15%;
         z-index: 90;
-    /*    animation: spin-earth 100s infinite linear both;*/
+       animation: earth-rotation 100s infinite linear both;
     }
+
+    @keyframes earth-rotation{ 100% { -webkit-transform: rotate(-360deg); transform:rotate(-360deg); transition: transform 20s; } }
     
     .moon{
         position: absolute;
         top: 12%;
         left: 25%;
-    /*
-        transform: rotate(0deg);
-        transition: transform ease-in 99999999999s;
-    */
+   
     }
     
     .earth-and-moon{
@@ -196,7 +197,11 @@ html, body{
     }
 
     .astronaut{
-        animation: rotate-astronaut 200s infinite linear both alternate;
+        animation: astronaut-rotation 200s infinite linear both alternate;
+    }
+
+    @keyframes astronaut-rotation{
+        100% { -webkit-transform: rotate(-720deg); transform:rotate(-720deg); }
     }
     
     .astronaut-container{
@@ -205,7 +210,11 @@ html, body{
         top: 60%;
         right: 20%;
         will-change: transform;
-        animation: move-astronaut 50s infinite linear both alternate;
+        animation: astronaut-path 20s infinite linear both alternate;
+    }
+
+    @keyframes astronaut-path{
+        100% { -webkit-transform: translate(-160px, -160px); transform:translate(-160px, -160px); }
     }
 
     .bright-stars.star{
@@ -221,25 +230,30 @@ html, body{
     .bright-stars .star:nth-child(1){
         top: 80%;
         left: 25%;
-        animation: glow-star 2s infinite ease-in-out alternate 1s;
+        animation: glowing-star 2s infinite ease-in-out alternate 1s;
     }
     .bright-stars .star:nth-child(2){
         top: 20%;
         left: 40%;
-        animation: glow-star 2s infinite ease-in-out alternate 3s;
+        animation: glowing-star 2s infinite ease-in-out alternate 3s;
     }
     .bright-stars .star:nth-child(3){
         top: 25%;
         left: 25%;
-        animation: glow-star 2s infinite ease-in-out alternate 5s;
+        animation: glowing-star 2s infinite ease-in-out alternate 5s;
     }
     .bright-stars .star:nth-child(4){
         top: 75%;
         left: 80%;
-        animation: glow-star 2s infinite ease-in-out alternate 7s;
+        animation: glowing-star 2s infinite ease-in-out alternate 7s;
     }
     .bright-stars .star:nth-child(5){
         top: 90%;
         left: 50%;
-        animation: glow-star 2s infinite ease-in-out alternate 9s;
+        animation: glowing-star 2s infinite ease-in-out alternate 9s;
+    }
+
+    @keyframes glowing-star{
+        40% { -webkit-opacity: 0.3; opacity: 0.3;  }
+        90%,100% { -webkit-opacity: 1; opacity: 1; -webkit-transform: scale(1.2); transform: scale(1.2); border-radius: 999999px;}
     }
