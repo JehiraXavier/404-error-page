@@ -14,7 +14,7 @@ body {
 }
 
 .body_background {
-  background: url(./background-image.png);
+  background: url(images/background-image.png);
   background-repeat: repeat-x;
   background-size: cover;
   background-position: left top;
@@ -23,7 +23,7 @@ body {
 }
 
 .background_stars {
-  background: url(./background-stars.svg);
+  background: url(images/background-stars.svg);
   background-repeat: repeat;
   background-size: contain;
   background-position: left top;
